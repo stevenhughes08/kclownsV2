@@ -10,6 +10,10 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
+// Design colors
+
+$primary-kclowns-red: #cc0000;
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
@@ -40,7 +44,7 @@ $screen-xl-min: 1200px;
 
 // Custom devices
 @mixin rwd($screen) {
-  @media (min-width: $screen+"px") {
+  @media (min-width: $screen+'px') {
     @content;
   }
 }
@@ -62,4 +66,81 @@ $screen-xl-min: 1200px;
     margin-bottom: 20px;
     margin-top: 20px;
   }
+}
+
+/**nav-bar**/
+.nav-bar-mobile {
+  font-size: 2rem;
+  ul {
+    list-style-type: none;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+/**tip jar**/
+.tip-jar {
+}
+/**Social Media**/
+.socialMediaPane {
+  background-color: #333;
+  color: whitesmoke;
+  padding-bottom: 0.75rem;
+}
+
+.social {
+  list-style-type: none;
+}
+
+.logoPane {
+  background-color: #333;
+}
+
+.logoMobile {
+  min-width: 90%;
+}
+
+.fa-facebook {
+  color: whitesmoke;
+  padding: 10px;
+}
+.fa-instagram {
+  color: whitesmoke;
+  padding: 10px;
+}
+
+/**Logo**/
+.logo {
+  width: 23%;
+  background-color: #333;
+}
+
+/**Generic alignments classes**/
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.right {
+  padding-left: 90%;
+}
+
+/**variables**/
+$imgpath: '../images/';
+body {
+  background: url(#{$imgpath}bg.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.social {
+  display: inline-block;
+}
+
+/**Dom notes**/
+
+.logoDesktop {
+  padding-top: 88%;
+  position: relative;
 }
