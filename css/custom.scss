@@ -1,3 +1,67 @@
+/***SET RESPONSIVE BREAKPOINTS MIXIN***/
+$media-breakpoint-up: (
+  'sm': (
+    min-width: 576px
+  ),
+  'md': (
+    min-width: 768px
+  ),
+  'lg': (
+    min-width: 992px
+  ),
+  'xl': (
+    min-width: 1200
+  )
+) !default;
+
+//Max-width sizes
+$media-breakpoint-down: (
+  'xs': (
+    max-width: 575.98px
+  ),
+  'sm': (
+    max-width: 767.98px
+  ),
+  'md': (
+    max-width: 991.98px
+  ),
+  'lg': (
+    max-width: 1199.98px
+  )
+) !default;
+
+// $media-breakpoint-between: ( $media-breakpoint-up,
+//   'xs': (
+//     max-width: 575.98px
+//   ),
+//   'sm': (
+//     min-width: 576px
+//   ),
+//   'md': (
+//     max-width: 991.98px
+//   ),
+//   'lg': (
+//     max-width: 1199.98px
+//   )
+
+// ) !default;
+
+///Mixin to manage responsive breakpoints
+@mixin respond-to($breakpoint) {
+  //if the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    //Prints media query based on the values
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  //If the key doesn't exist in the map
+  @else {
+    @warn "Dude, that shit could not retreived from `#{$breakpoint}."
+      + "Available brakpints are: #{map-keys($breakpoints)}.";
+  }
+}
+
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 576px;
 
@@ -14,40 +78,40 @@ $screen-xl-min: 1200px;
 
 $primary-kclowns-red: #cc0000;
 
-// Small devices
-@mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
-    @content;
-  }
-}
+// // Small devices
+// @mixin sm {
+//   @media (min-width: #{$screen-sm-min}) {
+//     @content;
+//   }
+// }
 
-// Medium devices
-@mixin md {
-  @media (min-width: #{$screen-md-min}) {
-    @content;
-  }
-}
+// // Medium devices
+// @mixin md {
+//   @media (min-width: #{$screen-md-min}) {
+//     @content;
+//   }
+// }
 
-// Large devices
-@mixin lg {
-  @media (min-width: #{$screen-lg-min}) {
-    @content;
-  }
-}
+// // Large devices
+// @mixin lg {
+//   @media (min-width: #{$screen-lg-min}) {
+//     @content;
+//   }
+// }
 
-// Extra large devices
-@mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
-    @content;
-  }
-}
+// // Extra large devices
+// @mixin xl {
+//   @media (min-width: #{$screen-xl-min}) {
+//     @content;
+//   }
+// }
 
-// Custom devices
-@mixin rwd($screen) {
-  @media (min-width: $screen+'px') {
-    @content;
-  }
-}
+// // Custom devices
+// @mixin rwd($screen) {
+//   @media (min-width: $screen+'px') {
+//     @content;
+//   }
+// }
 
 .container {
   padding: 0 15px;
@@ -69,10 +133,11 @@ $primary-kclowns-red: #cc0000;
 }
 
 /**nav-bar**/
-.nav-bar-mobile {
+.nav-bar {
   font-size: 2rem;
   ul {
     list-style-type: none;
+    flex-direction: row;
   }
   button {
     width: 100%;
@@ -81,6 +146,7 @@ $primary-kclowns-red: #cc0000;
 
 /**tip jar**/
 .tip-jar {
+  border: 10px;
 }
 /**Social Media**/
 .socialMediaPane {
@@ -91,14 +157,7 @@ $primary-kclowns-red: #cc0000;
 
 .social {
   list-style-type: none;
-}
-
-.logoPane {
-  background-color: #333;
-}
-
-.logoMobile {
-  min-width: 90%;
+  background-color: blue;
 }
 
 .fa-facebook {
@@ -112,8 +171,7 @@ $primary-kclowns-red: #cc0000;
 
 /**Logo**/
 .logo {
-  width: 23%;
-  background-color: #333;
+  max-width: 100%;
 }
 
 /**Generic alignments classes**/
@@ -123,10 +181,6 @@ $primary-kclowns-red: #cc0000;
   padding: 10px;
 }
 
-.right {
-  padding-left: 90%;
-}
-
 /**variables**/
 $imgpath: '../images/';
 body {
@@ -134,13 +188,61 @@ body {
   background-size: cover;
 }
 
-.social {
-  display: inline-block;
-}
-
 /**Dom notes**/
 
-.logoDesktop {
-  padding-top: 88%;
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+}
+
+/** home page **/
+
+nav {
+  background-color: aliceblue;
+}
+
+.Menu {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+li {
   position: relative;
+  a {
+    padding-left: 20px;
+    &:before {
+      font-family: FontAwesome;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  a[href='mailto:kalashnikovClowns@gmail.com']:before {
+    content: '\f0e0';
+    font-style: bold;
+  }
 }
