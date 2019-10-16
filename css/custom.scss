@@ -30,22 +30,6 @@ $media-breakpoint-down: (
   )
 ) !default;
 
-// $media-breakpoint-between: ( $media-breakpoint-up,
-//   'xs': (
-//     max-width: 575.98px
-//   ),
-//   'sm': (
-//     min-width: 576px
-//   ),
-//   'md': (
-//     max-width: 991.98px
-//   ),
-//   'lg': (
-//     max-width: 1199.98px
-//   )
-
-// ) !default;
-
 ///Mixin to manage responsive breakpoints
 @mixin respond-to($breakpoint) {
   //if the key exists in the map
@@ -99,6 +83,10 @@ $thirds: whitesmoke;
   padding-bottom: 0.75rem;
 }
 
+.socialMediaPane.ul {
+  flex-direction: row-reverse;
+}
+
 .fa-facebook,
 .fa-instagram,
 .fa-twitter,
@@ -136,24 +124,20 @@ body {
 
 /** home page **/
 
-nav {
-  background-color: aliceblue;
-}
-
 .Menu {
   width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: $secondary;
+  padding-right: 40px;
   li {
-    float: left;
+    float: right;
   }
-
   li a {
     display: block;
-    color: white;
+    color: $thirds;
     text-align: center;
     padding: 16px;
     text-decoration: none;
