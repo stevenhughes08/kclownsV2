@@ -60,44 +60,45 @@ $media-breakpoint-down: (
 
 // Color Pallet
 
-$primary: #cc0000;
-$secondary: #333;
+$primary: RGBA(204, 0, 0, 0.65); //cc0000;
+$secondary: RGBA(51, 51, 51, 0.68); /**333;**/
 $thirds: whitesmoke;
 
 /********************************************/
-/**nav-bar**/
-.nav-bar {
-  font-size: 2rem;
-  ul {
-    list-style-type: none;
-    flex-direction: row;
-  }
-  button {
-    width: 100%;
-  }
+/**GLOBAL**/
+
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 /**Social Media**/
-.socialMediaPane {
+.social {
   background-color: $secondary;
-  padding-bottom: 0.75rem;
+  ul {
+    flex-direction: row-reverse;
+  }
+  i {
+    font-size: 0.6rem;
+  }
 }
 
-.socialMediaPane.ul {
-  flex-direction: row-reverse;
+.button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: inherit;
+  height: 100%;
 }
 
-.fa-facebook,
-.fa-instagram,
-.fa-twitter,
-.fa-money-bill-alt {
-  color: $thirds;
-  padding: 10px;
+.button:hover {
+  background-color: $primary;
 }
 
 /**Logo**/
 .logo {
-  max-width: 100%;
+  max-width: 67%;
 }
 
 /**Generic alignments classes**/
@@ -123,6 +124,24 @@ body {
 }
 
 /** home page **/
+//THE BELOW SEGMENT WORKS WITH BEHAVIORS.JS 
+
+body > .container{
+  padding-top: 60px;
+}
+
+
+#menu {
+  transition: all 0.5s ease-out;
+  flex-grow: 1;
+  ;
+}
+
+.hovered {
+  flex-grow: 3; !important;
+}
+
+//THE ABOVE SEGMENT WORKS WITH BEHAVIORS.JS 
 
 .Menu {
   width: 100%;
@@ -130,26 +149,25 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: $secondary;
   padding-right: 40px;
   li {
     float: right;
   }
   li a {
-    display: block;
     color: $thirds;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
+    padding-right: 20px;
   }
+}
 
-  li a:hover {
-    background-color: #111;
-  }
+footer {
+  width: 100%;
+  background-color: $secondary;
+  color: $thirds;
 }
 
 .footer ul {
   list-style-type: none;
+  background-color: $secondary;
 }
 
 li {
