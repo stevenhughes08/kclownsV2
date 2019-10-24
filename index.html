@@ -26,22 +26,35 @@
       src="https://kit.fontawesome.com/a8c7fb3a91.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/frontend/behaviors.js"></script>
+    
     <link rel="shortcut icon" type="image/png" href="/images/favicon.jpg">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
+
+    <section class="pong">
+        <div id=”paddle1" style=”position:absolute;left:0px;top:460px;width:10px;height:150px;background-color:black;”>
+          </div>
+          <div id=”ball” style=”position:absolute;left:820px;top:510px;width:25px;height:25px;background-color:red;border-radius:50%;”>
+          </div>
+          <div id=”paddle2" style=”position:absolute;right:0px;top:460px;width:10px;height:150px;background-color:black;”>
+          </div>
+
+    </section>
+    <div class="container">
    <section>
-      <header class="sticky-top">
+      <header class="">
           <div class="logoPane">
             <div class="row">
-              <div class="mobileLogo d-md-none d-lg-none d-xl-none"><img class="mx-auto d-block img-fluid" src="images/DorakHeadLogo.png" alt="Kalashnikov Clowns Logo" aria-label="Kalashnikov Clowns"></div>
-                <ul class="social d-block d-sm-block d-block d-sm-block menu">
-                  <li><a href="https://www.facebook.com/kalashnikovClowns/" target="_blank" aria-label="Facebook link" alt="Facebook"><i class="button fab fa-facebook"></i></a></li>
-                  <li><a href="https://www.instagram.com/kalashnikov_clowns" target="_blank"><i class="button fab fa-instagram"></i></a></li>
-                  <li> <a href="https://twitter.com/K_ClownsTroupe" target="_blank"><i class="button fab fa-twitter"></i></a></li>
-                  <li><a href="#" target="_blank"><i class="button fas fa-money-bill-alt"></i></a></li>
+              <div class="sticky-top"><img class="mx-auto d-block img-fluid" src="images/DorakHeadLogo.png" alt="Kalashnikov Clowns Logo" aria-label="Kalashnikov Clowns"></div>
+                <ul class="menu nav-bar">
+                  <li><button class="button" id="menu"><a href="https://www.facebook.com/kalashnikovClowns/" target="_blank" aria-label="Facebook link" alt="Facebook"><i class="fab fa-facebook">Facebook</i></a></button></li>
+                  <li><button class="button" id="menu"><a href="https://www.instagram.com/kalashnikov_clowns" target="_blank"><i class="fab fa-instagram">Instagram</i></a></button></li>
+                  <li><button class="button" id="menu"><a href="https://twitter.com/K_ClownsTroupe" target="_blank"><i class="fab fa-twitter">twitter</i></a></button></li>
+                  <li><button class="button" id="menu"><a href="#" target="_blank"><i class="fas fa-money-bill-alt"> Tip-Jar</i></a></button></li>
+                  <li><button class="button" id="menu"><a href="/blog.html"><i class="fas fa-pencil-alt"> blog</i></a></button></li>
+                  <li><button class="button" id="menu"><a href="/missionStatement.html"><i class="fab fa-angellist">Our Vision</i></a></button></li>
                   
                 </ul>
                 
@@ -51,7 +64,7 @@
             
          </div>        
            <div-- class="navPane">
-             <div class="nav-bar center"><nav class="nav-bar d-none"><ul class="Menu"><li><button>the vision</button></li><li> <button>follow us</button></li><li> <button> characters</button></li><li><button>booking</button></li><li><button><i class="fas fa-money-bill-alt"></i> Tip Us</button></li></ul></nav></div>
+             <div class="nav-bar"><nav class="nav d-none"><ul class="Menu"><li><button>the vision</button></li><li> <button>follow us</button></li><li> <button> characters</button></li><li><button>booking</button></li><li><button><i class="fas fa-money-bill-alt"></i> Tip Us</button></li></ul></nav></div>
              <!--div class="nav-bar-desktop d-none d-sm-none d-md-none d-lg-none d-xl-none"><nav><nav><ul><li><i class="fa fa-lightbulb-o" aria-hidden="false">the vision</i><i></li><li> <button>follow us</button></li><li> <button><i class="fas fa-theater-masks"></i> characters</button></li><li><button>booking</button></li><li><button><i class="fas fa-money-bill-alt"></i> Like us? Tip Us</button></li></ul></nav></!--div>
            </div-->
          </header>
@@ -125,5 +138,8 @@
       </div>
     </div>
   </div>
+
+</div>
   </body>
+  <script src="js/frontend/behaviors.js"></script>
 </html>
